@@ -1,0 +1,16 @@
+Write test and then code - Test driven deployment
+assertEquals()
+assertNotEquals()
+assertTrue()
+assertFalse()
+assertArrayEquals()
+assertThrows()
+assertTimeout()
+
+@Test
+@BeforeEach
+@AfterEach
+@BeforeAll - has to be static
+@AfterAll - has to be static
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS) //only one instance is created for all test methods in this class.

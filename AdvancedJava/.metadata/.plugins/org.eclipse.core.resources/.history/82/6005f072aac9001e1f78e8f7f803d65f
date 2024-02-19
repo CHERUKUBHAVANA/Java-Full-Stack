@@ -1,0 +1,26 @@
+package com.junit.learning;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class TestBeforeAfter {
+	Shapes shape = null;
+	@BeforeEach
+	void init() {
+		shape = new Shapes();
+		System.out.println("Before each test case runs");
+	}
+	@Test
+	void testComputeSquareArea() {
+		assertNotEquals(572, shape.computeSquareArea(24), "Area of square calculation is wrong!");
+		System.out.print("Test executed");
+	}
+	@Test
+	void testComputeCircleArea() {
+		assertEquals(78.5, shape.computeCircleArea(5), ()->"Area of circle calculation is wrong!");
+		System.out.print("Test executed");
+	}
+}

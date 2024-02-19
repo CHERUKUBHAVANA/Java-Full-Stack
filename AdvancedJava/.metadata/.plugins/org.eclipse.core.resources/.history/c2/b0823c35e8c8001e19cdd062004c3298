@@ -1,0 +1,19 @@
+package com.junit.learning;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestTrial {
+	Shapes shape = new Shapes();
+
+	@Test
+	void test() {
+		assertEquals(6, 3+3);
+	}
+	@Test
+	void testComputeSquareArea() {
+		assertEquals()
+	}
+
+}

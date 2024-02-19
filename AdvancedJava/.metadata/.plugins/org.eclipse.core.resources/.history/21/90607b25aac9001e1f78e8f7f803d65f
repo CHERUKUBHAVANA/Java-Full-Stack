@@ -1,0 +1,22 @@
+package com.junit.learning;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import org.junit.jupiter.api.Test;
+
+public class TestBeforeAfter {
+	Shape shape = null;
+	@BeforeEach
+	void init() {
+		
+	}
+	@Test
+	void testComputeSquareArea() {
+		assertNotEquals(572, shape.computeSquareArea(24), "Area of square calculation is wrong!");
+	}
+	@Test
+	void testComputeCircleArea() {
+		assertEquals(74.5, shape.computeCircleArea(5), ()->"Area of circle calculation is wrong!");
+	}
+}

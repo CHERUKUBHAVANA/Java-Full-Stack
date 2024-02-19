@@ -1,0 +1,10 @@
+Types of Interfaces:
+Normal - has 2 or more methods
+Functional - has only one method - also called as SAM (Single Abstract Method) interfaces.
+Marker - has no methods
+
+@FunctionalInterface
+9:15
+
+Lambda expressions are used only in the case of Functional interfaces.
+They reduce the length of the code.

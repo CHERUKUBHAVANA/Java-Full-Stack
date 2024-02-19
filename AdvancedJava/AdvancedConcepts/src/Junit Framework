@@ -1,0 +1,17 @@
+Unit Testing Framework:
+-Prepare (setup a test environment, write test methods,...).
+-Provide testing input.
+-Run the test.
+-Provide expected output.
+-Perform assertion (verify the result).
+-Report test results (alert developer if test is failed or passed).
+
+All these steps are automatically performed by JUnit, given an input and expected output.
+API used for JUnit5 is Jupiter API, It consists of all methods required for assertion. Used to write the tests.
+JUnit5 doesn't provide backward compatibility.
+Vintage API - to provide backward compatibility.
+Extension - enhances the capability of JUnit5. Can use the platform of JUnit5 without the need of using Jupiter API.
+All the IDEs are integrated with this platform.
+
+Maven provides a specific structure to write tests in JUnit5.
+File - New - Other - Maven Project - GroupId (similar to package name) and Artifact ID - Finish

@@ -1,0 +1,5 @@
+Can use "var" instead of specifying datatypes from Java 10.
+But, it has to be initialized then and there. So that, based on the literal, type can be inferred. Otherwise, compiler can't infer the type.
+NOTE : This inference is possible only for "local variables".
+
+var a = 10;

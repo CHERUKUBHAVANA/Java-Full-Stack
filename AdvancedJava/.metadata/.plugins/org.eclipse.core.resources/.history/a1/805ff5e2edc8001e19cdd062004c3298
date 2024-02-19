@@ -1,0 +1,25 @@
+package com.junit.learning;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestTrial {
+	Shapes shape = new Shapes();
+
+	@Test
+	void testComputeSquareArea() {
+//		assertEquals(572, shape.computeSquareArea(24), "Area of square calculation is wrong!");
+		assertNotEquals(572, shape.computeSquareArea(24), "Area of square calculation is wrong!");
+	}
+	@Test
+	void testComputeCircleArea() {
+		assertEquals(74.5, shape.computeCircleArea(5), ()->"Area of circle calculation is wrong!");
+	}
+	@Test
+	void testComputeSquareArea1() {
+		String s = "JUNIT";
+		assertTrue(s.equals("JUNIT"));
+	}
+
+}

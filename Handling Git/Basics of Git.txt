@@ -1,0 +1,44 @@
+Download Git from internet.
+Check the version in cmd using -> git --version
+Configure your git -> git config --global user.name "bhavana"
+			git config --global user.email "bhavanabhavana1013@gmail.com"
+Check your git credentials -> git config --global --list
+
+Make a folder for your project. (Working directory)
+-> git init (local repo) , this will create a local repo with default main branch named "master"
+(OR) -> git init -b main , to change the name of local repo from "master" to "main"
+
+Create files in your folder of the project.
+Before committing the changes (adding files, editing files,...), add those files to the staging area, so that git can access and keep track of those.
+
+Adding to staging area (in local repo i.e, git init):
+-> git add filename
+-> git add .    (to add all the untracked files)
+
+Committing the changes (from staging area):
+-> git commit -m "commit message"
+
+To display all commits:
+-> git log
+
+From working directory to commit directly (without moving to staging area):
+-> git commit -a -m "commit msg"
+
+To show differences between current status and previous commit:
+-> git diff (before staging)
+-> git diff --staged (after staging)
+
+To remove a file from git:
+-> git rm -cached filename
+
+BRANCH HANDLING:
+
+git checkout -b branchname (OR) git switch -c branchname (To create new branch)
+git branch (to list all branches, with a star on current branch)
+git branch --all (to list all branches including remote branch, i.e, the branch that is on the github server)
+git switch branchname (To switch from one branch to another)
+git push origin branchname (To put new branch also on github server)
+git branch -d branchname (To delete an existing branch)
+git pull origin branchname (Before merging)
+git merge branchname (Merges main branch with this branch)
+git push origin master
