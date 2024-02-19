@@ -1,0 +1,21 @@
+SUBSET SUM : [Input : {3,1,2} , Output : [0,1,2,3,4,5,6]]
+
+	public static void main(String[] args){
+		int[] arr = {3,1,2};
+		ArrayList<Integer> l = new ArrayList<>();
+		TreeSet<Integer> ans = new TreeSet<>();
+		printSubseq(arr,0,l,ans,0);
+		System.out.println(ans);
+	}
+	public static void printSubseq(int[] arr,int index,ArrayList<Integer> l,TreeSet<Integer> ans,int sum){
+		if(index >= arr.length){
+			ans.add(sum);
+			return;
+		}
+		sum += arr[index];
+		l.add(arr[index]);
+		printSubseq(arr,index+1,l,ans,sum);
+		sum -= arr[index];
+		l.remove(l.size()-1);
+		printSubseq(arr,index+1,l,ans,sum);
+	}

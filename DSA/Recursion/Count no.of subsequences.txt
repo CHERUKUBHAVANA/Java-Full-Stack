@@ -1,0 +1,20 @@
+COUNT THE NO.OF SUBSEQUENCES WITH SUM K
+
+	public static void main(String[] args){
+		int[] arr = {3,1,2,4,5};
+		ArrayList<Integer> l = new ArrayList<>();
+		System.out.println(printSubseq(arr,0,4,0));
+	}
+	public static int printSubseq(int[] arr,int index,int k,int sum){
+		if(index >= arr.length){
+			if(sum == k){	
+				return 1;
+			}
+			return 0;
+		}
+		sum += arr[index];
+		int left = printSubseq(arr,index+1,k,sum);
+		sum -= arr[index];
+		int right = printSubseq(arr,index+1,k,sum);
+		return left + right;
+	}

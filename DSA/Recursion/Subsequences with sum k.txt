@@ -1,0 +1,44 @@
+PRINT ALL SUBSEQUENCES WITH SUM K
+
+public static void main(String[] args){
+		int[] arr = {3,1,2,4,5};
+		ArrayList<Integer> l = new ArrayList<>();
+		printSubseq(arr,l,0,8);
+	}
+	public static void printSubseq(int[] arr,ArrayList<Integer> l,int index,int k){
+		if(index >= arr.length){
+			int sum = 0;
+			for(int i : l){
+				sum += i;
+			}
+			if(sum == k)
+				System.out.println(l);
+			return;
+		}
+		l.add(arr[index]);
+		printSubseq(arr,l,index+1,k);
+		l.remove(l.size()-1);
+		printSubseq(arr,l,index+1,k);
+	}
+
+
+				(OR)
+
+public static void main(String[] args){
+		int[] arr = {3,1,2,4,5};
+		ArrayList<Integer> l = new ArrayList<>();
+		printSubseq(arr,l,0,6,0);
+	}
+	public static void printSubseq(int[] arr,ArrayList<Integer> l,int index,int k,int sum){
+		if(index >= arr.length){
+			if(sum == k)
+				System.out.println(l);
+			return;
+		}
+		l.add(arr[index]);
+		sum += arr[index];
+		printSubseq(arr,l,index+1,k,sum);
+		sum -= l.get(l.size()-1);
+		l.remove(l.size()-1);
+		printSubseq(arr,l,index+1,k,sum);
+	}

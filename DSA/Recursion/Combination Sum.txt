@@ -1,0 +1,21 @@
+COMBINATION SUM - i.e, REPEATED ELEMENTS ARE ALLOWED
+
+public static void main(String[] args){
+		int[] arr = {2,3,6,7};
+		ArrayList<Integer> l = new ArrayList<>();
+		printSubseq(arr,0,7,l);
+	}
+	public static void printSubseq(int[] arr,int index,int k,ArrayList<Integer> l){
+		if(index >= arr.length){
+			if(k==0){	
+				System.out.println(l);
+			}
+			return;
+		}
+		if(arr[index]<=k){
+			l.add(arr[index]);
+			printSubseq(arr,index,k-arr[index],l);
+			l.remove(l.size()-1);
+		}
+		printSubseq(arr,index+1,k,l);
+	}

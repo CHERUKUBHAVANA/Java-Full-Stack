@@ -1,0 +1,53 @@
+PRINT ANY ONE SUBSEQUENCE WITH SUM K
+
+public static void main(String[] args){
+		int[] arr = {3,1,2,4,5};
+		ArrayList<Integer> l = new ArrayList<>();
+		printSubseq(arr,l,0,6,0);
+	}
+	public static boolean printSubseq(int[] arr,ArrayList<Integer> l,int index,int k,int sum){
+		if(index >= arr.length){
+			if(sum == k){
+				System.out.println(l);
+				return true;
+			}
+			return false;
+		}
+		l.add(arr[index]);
+		sum += arr[index];
+		if(printSubseq(arr,l,index+1,k,sum) == true)
+			return true;
+		sum -= l.get(l.size()-1);
+		l.remove(l.size()-1);
+		if(printSubseq(arr,l,index+1,k,sum) == true)
+			return true;
+		return false;
+	}
+
+				(OR)
+
+public static void main(String[] args){
+		int[] arr = {3,1,2,4,5};
+		ArrayList<Integer> l = new ArrayList<>();
+		printSubseq(arr,l,0,6);
+	}
+	public static boolean printSubseq(int[] arr,ArrayList<Integer> l,int index,int k){
+		if(index >= arr.length){
+			int sum = 0;
+			for(int i : l){
+				sum += i;
+			}
+			if(sum == k){
+				System.out.println(l);
+				return true;
+			}
+			return false;
+		}
+		l.add(arr[index]);
+		if(printSubseq(arr,l,index+1,k) == true)
+			return true;
+		l.remove(l.size()-1);
+		if(printSubseq(arr,l,index+1,k) == true)
+			return true;
+		return false;
+	}
