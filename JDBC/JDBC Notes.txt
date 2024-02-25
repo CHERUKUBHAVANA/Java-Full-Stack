@@ -1,0 +1,33 @@
+7 steps in connecting Java Application to the database:
+
+1. Import the package (java.sql.*)
+2. Load and Register the Driver
+	Download mysql-Connector .jar file
+	Load it in the project.
+	For MySql driver : com.mysql.jdbc.Driver
+	To register, Class.forName("com.mysql.jdbc.Driver")
+3. Establish the Connection
+	Instantiate Connection interface.
+4. Create the Statement
+	Statement is of 3 types-
+		Statement: Execute a query.
+		Prepared Statement: Predefined query execution with new inputs.
+		Callable Statement: Execute Procedural Language in SQL, i.e, for stored procedures.
+5. Excecute the query
+6. Process the results
+7. Close the Statement object and then the Connection object.
+
+
+DQL (select query) : executeQuery()
+DML : executeUpdate()
+DDL : execut()
+
+Using Statement - executeUpdate(query)
+PreparedStatement - when query is fixed and values are dynamic; executeUpdate()
+
+Class.forName("com.mysql.jdbc.Driver") -> When class is loaded, static block gets executed. Here, the static block of Driver class contains code for registering the driver.
+i.e,
+static
+{
+	DriverManager.registerDriver(new Driver());
+}
