@@ -1,0 +1,16 @@
+package com.learning.jdbc;
+
+import java.sql.*;
+public class JDBCIntro {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection con = DriverManager.getConnection("college", "root", "1234");
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery("select * from college");
+		while(rs.next())
+			System.out.println(rs.getInt(1)+"..."+rs.getString(2));
+		st.close();
+		con.close();
+	}
+}

@@ -1,0 +1,9 @@
+package com.learning.jdbc;
+
+public class JDBCPractical {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.learning.jdbc;
+
+public class JDBCPractical {
+
+	public static void main(String[] args) {
+		Course c = getCourse(102);
+		
+	}
+	
+	class CourseDAO{
+		
+	}
+	
+	class Course{
+		
+	}
+
+}

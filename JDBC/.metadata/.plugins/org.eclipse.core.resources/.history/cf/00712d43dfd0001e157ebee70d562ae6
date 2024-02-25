@@ -1,0 +1,26 @@
+package com.learning.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class JDBCPractical {
+
+	public static void main(String[] args) {
+		CourseDAO dao = new CourseDAO();
+		Course c = dao.getCourse(102);
+		
+	}
+	
+	class CourseDAO{
+		public Course getCourse(int id) throws ClassNotFoundException {
+			Class.forName("jdbc:mysql://localhost:3306/college");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/college", "root", "1234");
+			
+		}
+	}
+	
+	class Course{
+		
+	}
+
+}
